@@ -1,16 +1,20 @@
-// import MainContent from "./components/Main";
+import React from "react";
 import Header from "./components/Header";
-import Card from "./components/Main"
-
+import Entry from "./components/Entry";
+import data from "./data"; 
 
 function App() {
   return (
-  <>
-    <Header />
-    <Card />
-  </>
+    <>
+      <Header />
+      {data.map(entry => (
+        <Entry
+          key={entry.id}
+          entry={entry}
+        />
+      ))}
+    </>
   );
 }
-
 
 export default App;
